@@ -6,12 +6,10 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Providers from '../components/Providers';
 import { RefreshProvider } from '../lib/contexts/RefreshContext';
-import { SITE_NAME } from '../lib/site';
 
 const lato = Lato({ subsets: ['latin'], weight: ['400', '700'] });
 
 export const metadata: Metadata = {
-  
   title: 'CKstats',
   description:
     'Real-time and historical statistics for the CKPool Bitcoin mining pool using data from their API.',
@@ -32,11 +30,18 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                const defaultTheme = ${JSON.stringify(process.env.NEXT_PUBLIC_DEFAULT_THEME || 'dark')};
+                const defaultTheme = ${JSON.stringify(
+                  process.env.NEXT_PUBLIC_DEFAULT_THEME || 'dark'
+                )};
                 const theme = localStorage.getItem('theme') || defaultTheme;
                 document.documentElement.setAttribute('data-theme', theme);
               } catch (e) {
-                document.documentElement.setAttribute('data-theme', ${JSON.stringify(process.env.NEXT_PUBLIC_DEFAULT_THEME || 'dark')});
+                document.documentElement.setAttribute(
+                  'data-theme',
+                  ${JSON.stringify(
+                    process.env.NEXT_PUBLIC_DEFAULT_THEME || 'dark'
+                  )}
+                );
               }
             `,
           }}
