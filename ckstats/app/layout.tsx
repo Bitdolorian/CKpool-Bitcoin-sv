@@ -10,12 +10,14 @@ import { SITE_NAME } from '../lib/site';
 
 const lato = Lato({ subsets: ['latin'], weight: ['400', '700'] });
 
-const siteTitle = SITE_NAME;
-
 export const metadata: Metadata = {
-  title: siteTitle,
+  
+  title: 'CKstats',
   description:
     'Real-time and historical statistics for the CKPool Bitcoin mining pool using data from their API.',
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({
