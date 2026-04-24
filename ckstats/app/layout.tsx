@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description:
     'Real-time and historical statistics for the CKPool Bitcoin mining pool using data from their API.',
   icons: {
-    icon: [{ url: '/icon.png', sizes: '32x32' }],
+    icon: [{ url: '/bsv.png', sizes: '32x32' }],
   },
 };
 
