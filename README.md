@@ -1,7 +1,7 @@
 
 
 
-# CKPool‑Bitcon-sv: Solo Mining  
+# CKPool‑Bitcoin-sv: Solo Mining  
 A fully integrated, deterministic solo‑mining pool for Bitcoin-SV (BSV), combining:
 
 - CKPool‑BSV — optimized CKPool fork for Bitcoin-SV  
