@@ -96,65 +96,72 @@ sudo nano /etc/systemd/system/bitcoinsv.service
 ```
 
 ```
-[Unit]  
-Description=Bitcoin-sv Daemon  
+[Unit]
+Description=Bitcoin-SV Daemon
 After=network.target
 
-[Service]  
-ExecStart=/usr/local/bin/bitcoinsv -conf=/home/umbrel/ckpool-bsv-github/configs/bitcoin.conf  
-User=umbrel  
-Restart=always  
+[Service]
+ExecStart=/home/umbrel/bitcoin-sv/src/bitcoind -conf=/home/umbrel/bitcoin-sv/ckpool-bsv/configs/bitcoinsv.conf
+User=umbrel
+Restart=always
 TimeoutStopSec=90
+Type=simple
 
-[Install]  
+[Install]
 WantedBy=multi-user.target
+
 ```
 
 ### Create CKPool‑BSV service
 ```
-sudo nano /etc/systemd/system/ckpool.service
+sudo nano /etc/systemd/system/ckpoolbsv.service
 ```
 
 ```
-[Unit]  
-Description=CKPool-BSV Solo Pool  
-After=network.target digibyted.service
+[Unit]
+Description=CKPool-BSV Solo Pool
+After=network.target bitcoinsv.service
 
-[Service]  
-ExecStart=/home/umbrel/ckpool-bsv-github/ckpool-source/ckpool-bsv -c /home/umbrel/ckpool-bsv-github/configs/ckpool.conf  
-User=umbrel  
+[Service]
+ExecStart=/home/umbrel/bitcoin-sv/ckpool-bsv/src/ckpool -c /home/umbrel/bitcoin-sv/ckpool-bsv/ckpool.conf
+User=umbrel
 Restart=always
+Type=simple
 
-[Install]  
+[Install]
 WantedBy=multi-user.target
+
 ```
 
 ### Create CKStats Dashboard service
 ```
-sudo nano /etc/systemd/system/ckstats.service
+sudo nano /etc/systemd/system/ckstatsbsv.service
 ```
 
 ```
-[Unit]  
-Description=CKStats Dashboard  
+[Unit]
+Description=CKStats Dashboard
 After=network.target postgresql.service
 
-[Service]  
-WorkingDirectory=/home/umbrel/ckpool-bsv-github/ckstats  
-ExecStart=/usr/bin/pnpm start  
-User=umbrel  
-Restart=always  
+[Service]
+WorkingDirectory=/home/umbrel/bitcoin-sv/ckstats
+ExecStart=/usr/bin/pnpm start
+User=umbrel
+Restart=always
 Environment=NODE_ENV=production
+Type=simple
 
-[Install]  
+[Install]
 WantedBy=multi-user.target
+
 ```
 
 ### Enable and start all services
 ```
-sudo systemctl daemon-reload  
-sudo systemctl enable digibyted ckpool ckstats  
-sudo systemctl start digibyted ckpool ckstats
+sudo systemctl daemon-reload
+sudo systemctl enable bitcoinsv ckpool-bsv ckstats
+sudo systemctl start bitcoinsv ckpool-bsv ckstats
+
 ```
 
 ---
