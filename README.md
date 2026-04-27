@@ -1,7 +1,7 @@
 
 
 
-# CKPool‑Bitcoin-sv: Solo Mining  
+# Bitcoin-sv with CKpool: Solo Mining  
 A fully integrated, deterministic solo‑mining pool for Bitcoin-SV (BSV), combining:
 
 - CKPool‑BSV — optimized CKPool fork for Bitcoin-SV  
@@ -291,6 +291,15 @@ telnet localhost 3335
 ### Check Bitcoin-sv RPC:
 ```
 bitcoin-cli -conf=/home/umbrel/bitcoin-sv/bitcoin.conf getblockchaininfo
+------------
+### To speed up node sync:
+```
+~/Bitcoin-SV/src/bitcoin-cli -conf=/home/YOUR-PATH/Bitcoin-SV/data/bitcoin.conf addnode "node.bsv.network" add
+~/Bitcoin-SV/src/bitcoin-cli -conf=/home/YOUR-PATH/Bitcoin-SV/data/bitcoin.conf addnode "sv.usebsv.com" add
+~/Bitcoin-SV/src/bitcoin-cli -conf=/home/YOUR-PATH/Bitcoin-SV/data/bitcoin.conf addnode "sv.jochen-hoenicke.de" add
+~/Bitcoin-SV/src/bitcoin-cli -conf=/home/YOUR-PATH/Bitcoin-SV/data/bitcoin.conf addnode "bsv.im" add
+~/Bitcoin-SV/src/bitcoin-cli -conf=/home/YOUR-PATH/Bitcoin-SV/data/bitcoin.conf addnode "node.svpool.com" add
+~/Bitcoin-SV/src/bitcoin-cli -conf=/home/YOUR-PATH/Bitcoin-SV/data/bitcoin.conf addnode "bsv.koreacentral.cloudapp.azure.com" add
 
 ```
 
