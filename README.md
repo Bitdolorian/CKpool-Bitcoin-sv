@@ -291,7 +291,7 @@ telnet localhost 3335
 ### Check Bitcoin-sv RPC:
 ```
 bitcoin-cli -conf=/home/umbrel/bitcoin-sv/bitcoin.conf getblockchaininfo
-------------
+```
 ### To speed up node sync:
 ```
 ~/Bitcoin-SV/src/bitcoin-cli -conf=/home/YOUR-PATH/Bitcoin-SV/data/bitcoin.conf addnode "node.bsv.network" add
