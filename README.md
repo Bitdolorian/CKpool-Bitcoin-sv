@@ -193,7 +193,7 @@ pm2 start /home/umbrel/bitcoin-sv/src/bitcoind --name bitcoin-sv -- \
 Logs:
 
 ```
-pm2 logs digibyted
+pm2 logs bitcoin-sv
 ```
 
 ---
@@ -209,7 +209,7 @@ pm2 start /home/umbrel/bitcoin-sv/ckpool-bsv/ --name ckpool-bsv -- \
 Logs:
 
 ```
-pm2 logs ckpool-dgb
+pm2 logs ckpool-bsv
 ```
 
 ---
